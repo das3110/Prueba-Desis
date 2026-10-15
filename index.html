@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulario de Producto</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/formulario.js" defer></script>
+</head>
+<body>
+  <main class="panel">
+    <h1>Formulario de Producto</h1>
+    <form id="formulario-producto" novalidate>
+      <div class="campos">
+        <div class="campo">
+          <label for="codigo">Código</label>
+          <input id="codigo" name="codigo" type="text" aria-required="true" spellcheck="false">
+        </div>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" aria-required="true">
+        </div>
+        <div class="campo">
+          <label for="bodega_id">Bodega</label>
+          <select id="bodega_id" name="bodega_id" aria-required="true" disabled>
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="sucursal_id">Sucursal</label>
+          <select id="sucursal_id" name="sucursal_id" aria-required="true" disabled>
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="moneda_id">Moneda</label>
+          <select id="moneda_id" name="moneda_id" aria-required="true" disabled>
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="precio">Precio</label>
+          <input id="precio" name="precio" type="text" inputmode="decimal" aria-required="true">
+        </div>
+      </div>
+      <fieldset id="materiales">
+        <legend>Material del Producto</legend>
+        <div class="opciones-material">
+          <label><input type="checkbox" name="materiales[]" value="1"> Plástico</label>
+          <label><input type="checkbox" name="materiales[]" value="2"> Metal</label>
+          <label><input type="checkbox" name="materiales[]" value="3"> Madera</label>
+          <label><input type="checkbox" name="materiales[]" value="4"> Vidrio</label>
+          <label><input type="checkbox" name="materiales[]" value="5"> Textil</label>
+        </div>
+      </fieldset>
+      <div class="campo">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" rows="3" aria-required="true"></textarea>
+      </div>
+      <p id="estado" class="solo-lectores" role="status" aria-live="polite"></p>
+      <button id="guardar" type="submit" disabled>Guardar Producto</button>
+    </form>
+  </main>
+  <dialog id="aviso" class="aviso" aria-labelledby="titulo-aviso" aria-describedby="mensaje-aviso">
+    <h2 id="titulo-aviso">Aviso</h2>
+    <p id="mensaje-aviso"></p>
+    <form method="dialog">
+      <button type="submit" autofocus>Aceptar</button>
+    </form>
+  </dialog>
+</body>
+</html>
